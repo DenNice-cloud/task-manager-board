@@ -12,22 +12,21 @@ export const todosControllers ={
     }
   },
   deleteTodo: async (req: Request, res: Response) => {
-    const { id } = req.params;
-
     try {
-      const todos = await todoService.remove(parseInt(id));
+      const { id } = req.params;
+      await todoService.remove(Number(id))
       
-      res.status(200).send(todos);
+      res.status(200).send();
     } catch (error) {
-      res.status(500).send({ error: 'Failed to fetch products' });
+      res.status(500).send({ error: 'Failed to delete products' });
     }
   },
   createTodo: async (req: Request, res: Response) => {
     try {
       const { title, description } = req.body;
-      const todos = await todoService.create(title, description);
+      const todo = await todoService.create(title, description);
 
-      res.status(201).send(todos);
+      res.status(201).send(todo);
     } catch (error) {
       res.status(500).send({ error: 'Failed to create todo' });
     }
