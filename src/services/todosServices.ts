@@ -1,5 +1,5 @@
 import prisma from "../utils/db";
-import { todos } from "../TempData/TempData";
+// import { todos } from "../TempData/TempData";
 
 export const todoService = {
   // getAlltodos: async () => {

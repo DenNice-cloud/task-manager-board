@@ -1,5 +1,4 @@
 const express = require("express");
-// const { todosRoter } = require("./routes/todosRoutes");
 import { todosRouter } from "./routes/todosRoutes";
 
 const PORT = process.env.PORT || 3005;
