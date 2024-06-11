@@ -56,4 +56,12 @@ export const todoService = {
       where: { id },
     });
   },
+  update: async (id: number, data: { title?: string, description?: string }) => {
+    const { title, description } = data;
+
+    return await prisma.todo.update({
+      where: { id },
+      data: data,
+    });
+  },
 };
