@@ -10,7 +10,7 @@ export const todoService = {
       data: {
         title,
         description,
-        status: TodoStatus.TODO,
+        status: "TODO",
       },
     });
   },
