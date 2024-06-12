@@ -3,6 +3,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum TodoStatus {
+  TODO
+  IN_PROGRESS
+  DONE
+}
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,5 +17,6 @@ model Todo {
   id          Int      @id @default(autoincrement())
   title       String
   description String?
+  status      TodoStatus @default(TODO)
   createdAt   DateTime @default(now())
 }

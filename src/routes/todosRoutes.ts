@@ -7,3 +7,4 @@ todosRouter.get("/", todosControllers.getAllTodos);
 todosRouter.delete("/:id", todosControllers.deleteTodo);
 todosRouter.post('/', todosControllers.createTodo);
 todosRouter.patch('/:id', todosControllers.updateTodo);
+todosRouter.patch('/:id/status', todosControllers.updateTodoStatus);
